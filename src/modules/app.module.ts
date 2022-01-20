@@ -1,3 +1,4 @@
+import { PostModule } from './post/post.module';
 import 'dotenv/config';
 import { ConfigModule } from '@nestjs/config';
 import { Module } from '@nestjs/common';
@@ -7,6 +8,7 @@ import dbMongoConfig from '../shared/infra/mongo';
 
 @Module({
     imports: [
+        PostModule,
         ConfigModule.forRoot(),
         MongooseModule.forRoot(dbMongoConfig.url, dbMongoConfig.properties),
         UserModule,
