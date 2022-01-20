@@ -1,6 +1,6 @@
-import { UserController } from '../../../shared/infra/http/controllers/user.controller';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
+import { UserController } from 'src/shared/infra/http/controllers/users/user.controller';
 import { UserRepository } from '../infra/mongo/mongoose/repositories/UserRepository';
 import { UserSchema, user } from '../infra/mongo/mongoose/schemas/user.schema';
 import { CreateUserService } from './createUser/createUser.service';
