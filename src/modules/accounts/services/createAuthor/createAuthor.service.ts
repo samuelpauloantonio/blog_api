@@ -4,6 +4,7 @@ https://docs.nestjs.com/providers#services
 
 import { Inject, Injectable } from '@nestjs/common';
 import { ICreateAuthorDTO } from '../../dto/createAuthorDTO';
+import { AuthorMap } from '../../mapper/AuthorMap';
 import { IAuthorRepository } from '../../repositories/IAuthorRepository';
 
 @Injectable()
@@ -20,6 +21,6 @@ export class CreateAuthorService {
             password,
         });
 
-        return author;
+        return AuthorMap.toDTO(author);
     }
 }

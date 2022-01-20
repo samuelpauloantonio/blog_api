@@ -1,8 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import { ICreateAuthorDTO } from 'src/modules/accounts/dto/createAuthorDTO';
 
-export type AuthorDocument = author & Document<ICreateAuthorDTO>;
+export type AuthorDocument = author & Document<any>;
 
 @Schema({ timestamps: true })
 export class author {
@@ -14,6 +13,12 @@ export class author {
 
     @Prop({ required: true })
     password: string;
+
+    @Prop()
+    createdAt: Date;
+
+    @Prop()
+    updatedAt: Date;
 }
 
 export const AuthorSchema = SchemaFactory.createForClass(author);
