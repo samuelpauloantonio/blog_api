@@ -1,7 +1,7 @@
 import 'dotenv/config';
 import { ConfigModule } from '@nestjs/config';
 import { Module } from '@nestjs/common';
-import { AuthorModule } from './accounts/services/author.module';
+import { UserModule } from './accounts/services/user.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import dbMongoConfig from '../shared/infra/mongo';
 
@@ -9,7 +9,7 @@ import dbMongoConfig from '../shared/infra/mongo';
     imports: [
         ConfigModule.forRoot(),
         MongooseModule.forRoot(dbMongoConfig.url, dbMongoConfig.properties),
-        AuthorModule,
+        UserModule,
     ],
     controllers: [],
     providers: [],
