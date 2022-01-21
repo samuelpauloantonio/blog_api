@@ -1,6 +1,6 @@
 import { PostModule } from './post/post.module';
 import { ConfigModule } from '@nestjs/config';
-import { MiddlewareConsumer, Module, RequestMethod } from '@nestjs/common';
+import { MiddlewareConsumer, Module } from '@nestjs/common';
 import { UserModule } from './accounts/services/user.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import dbMongoConfig from '../shared/infra/mongo';

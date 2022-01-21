@@ -2,7 +2,7 @@
 https://docs.nestjs.com/controllers#controllers
 */
 
-import { Body, Controller, Get, Inject, Post, UseGuards } from '@nestjs/common';
+import { Body, Controller, Get, Inject, Post } from '@nestjs/common';
 import { ICreateUserDTO } from 'src/modules/accounts/dto/createUserDTO';
 import { UserResponseDTO } from 'src/modules/accounts/dto/UserResponseDTO';
 

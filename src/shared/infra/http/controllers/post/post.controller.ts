@@ -2,7 +2,7 @@
 https://docs.nestjs.com/controllers#controllers
 */
 
-import { Body, Controller, Get, Inject, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Inject, Post } from '@nestjs/common';
 import { ICreatePostDTO } from 'src/modules/post/dto/ICreatePost.dto';
 import { ICreatePostService } from 'src/modules/post/services/interfaces/ICreatePostService.interface';
 import { IListPostService } from 'src/modules/post/services/interfaces/IListPostServices.interface';
