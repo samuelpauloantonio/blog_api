@@ -3,7 +3,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { ICreateCategoryDTO } from 'src/modules/post/dto/IcreateCategory.dto';
 import { ICategoriesRepository } from 'src/modules/post/repositories/interfaces/ICategoriesRepository';
-import { categories, CategoriesDocument } from '../schemas/categories.schemas';
+import { categories, CategoriesDocument } from '../schemas/categories.schema';
 
 @Injectable()
 export class CategoryRepository implements ICategoriesRepository {

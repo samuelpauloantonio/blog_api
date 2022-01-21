@@ -4,9 +4,8 @@ https://docs.nestjs.com/controllers#controllers
 
 import { Body, Controller, Inject, Post } from '@nestjs/common';
 import { ICreateCategoryDTO } from 'src/modules/post/dto/IcreateCategory.dto';
-import { Response } from 'express';
 import { ICreateCategoryService } from 'src/modules/post/services/interfaces/ICreateCategoriesService.interface';
-import { CategoriesDocument } from 'src/modules/post/infra/mongo/mongoose/schemas/categories.schemas';
+import { CategoriesDocument } from 'src/modules/post/infra/mongo/mongoose/schemas/categories.schema';
 
 @Controller('categories')
 export class CategoriesController {
