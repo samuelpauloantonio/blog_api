@@ -1,4 +1,4 @@
-import { BadRequestException, Inject, Injectable } from '@nestjs/common';
+import { ConflictException, Inject, Injectable } from '@nestjs/common';
 import { ICreateCategoryDTO } from 'src/modules/post/dto/IcreateCategory.dto';
 import { ICategoriesRepository } from 'src/modules/post/repositories/interfaces/ICategoriesRepository';
 
@@ -12,7 +12,7 @@ export class CreateCategoryServices {
         const checkIfExist = await this.CategoryRepository.findOneByName(name);
 
         if (checkIfExist) {
-            throw new BadRequestException('Category already exists');
+            throw new ConflictException('Category already exists');
         }
         const categories = await this.CategoryRepository.createCategory({
             name,

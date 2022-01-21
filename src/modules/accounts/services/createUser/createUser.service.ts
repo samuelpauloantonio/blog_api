@@ -2,7 +2,7 @@
 https://docs.nestjs.com/providers#services
 */
 
-import { BadRequestException, Inject, Injectable } from '@nestjs/common';
+import { ConflictException, Inject, Injectable } from '@nestjs/common';
 import { ICreateUserDTO } from '../../dto/createUserDTO';
 import { UserMap } from '../../mapper/UserMap';
 import { hash } from 'bcrypt';
@@ -17,7 +17,7 @@ export class CreateUserService {
 
     async execute({ name, email, password }: ICreateUserDTO) {
         if (await this.UserRepository.findOneByEmail(email)) {
-            throw new BadRequestException('User already exists');
+            throw new ConflictException('User already exists');
         }
         const passwordHashed = await hash(password, 8);
         const user = await this.UserRepository.createUser({
