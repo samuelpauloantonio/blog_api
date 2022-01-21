@@ -1,5 +1,4 @@
 import { PostModule } from './post/post.module';
-import 'dotenv/config';
 import { ConfigModule } from '@nestjs/config';
 import { Module } from '@nestjs/common';
 import { UserModule } from './accounts/services/user.module';
