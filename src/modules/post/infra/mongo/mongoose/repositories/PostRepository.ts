@@ -20,8 +20,8 @@ export class PostRepository implements IPostRepository {
     }: ICreatePostDTO): Promise<PostDocument> {
         const post = await this.PostModel.create({
             title,
-            author_id,
-            category_id,
+            author: author_id,
+            category: category_id,
             description,
         });
 
@@ -30,8 +30,8 @@ export class PostRepository implements IPostRepository {
 
     async listAllPost(): Promise<PostDocument[]> {
         return await this.PostModel.find()
-            .populate('author_id')
-            .populate('category_id');
+            .populate('author')
+            .populate('category');
     }
     findOneByTitle(title: any): Promise<PostDocument> {
         throw new Error('Method not implemented.');

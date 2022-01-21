@@ -1,5 +1,5 @@
-import { PostDocument } from '../../infra/mongo/mongoose/schemas/post.schema';
+import { IPostResponseDTO } from '../../dto/IPostResponse.dto';
 
 export interface IListPostService {
-    listAll(): Promise<PostDocument[]>;
+    listAll(): Promise<IPostResponseDTO[]>;
 }
