@@ -3,12 +3,12 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { ICreateUserDTO } from 'src/modules/accounts/dto/createUserDTO';
 import { IUserRepository } from 'src/modules/accounts/repositories/interfaces/IUserRepository';
-import { user, UserDocument } from '../schemas/user.schema';
+import { users, UserDocument } from '../schemas/user.schema';
 
 @Injectable()
 export class UserRepository implements IUserRepository {
     constructor(
-        @InjectModel(user.name)
+        @InjectModel(users.name)
         private readonly UserSchema: Model<UserDocument>,
     ) {}
 
