@@ -1,6 +1,5 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { IPostResponseDTO } from '../../dto/IPostResponse.dto';
-import { PostDocument } from '../../infra/mongo/mongoose/schemas/post.schema';
 import { PostMap } from '../../mapper/PostMap';
 import { IPostRepository } from '../../repositories/interfaces/IPostRepository';
 import { IListPostService } from '../interfaces/IListPostServices.interface';
