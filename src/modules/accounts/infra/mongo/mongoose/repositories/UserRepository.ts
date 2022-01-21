@@ -29,4 +29,11 @@ export class UserRepository implements IUserRepository {
     async findOneByEmail(email: string): Promise<UserDocument> {
         return await this.UserSchema.findOne({ email });
     }
+
+    async listAll(): Promise<UserDocument[]> {
+        return await this.UserSchema.find();
+    }
+    async findOneById(_id: string): Promise<UserDocument> {
+        return this.UserSchema.findById(_id);
+    }
 }

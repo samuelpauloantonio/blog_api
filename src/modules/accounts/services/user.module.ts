@@ -4,6 +4,7 @@ import { UserController } from 'src/shared/infra/http/controllers/users/user.con
 import { UserRepository } from '../infra/mongo/mongoose/repositories/UserRepository';
 import { UserSchema, users } from '../infra/mongo/mongoose/schemas/user.schema';
 import { CreateUserService } from './createUser/createUser.service';
+import { ListUsersServices } from './listUser/listUser.service';
 
 @Module({
     imports: [
@@ -19,6 +20,18 @@ import { CreateUserService } from './createUser/createUser.service';
         {
             useClass: CreateUserService,
             provide: 'CreateUserService',
+        },
+
+        {
+            useClass: ListUsersServices,
+            provide: 'ListUserServices',
+        },
+    ],
+
+    exports: [
+        {
+            useClass: UserRepository,
+            provide: 'UserRepository',
         },
     ],
 })
