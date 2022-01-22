@@ -12,6 +12,7 @@ import {
     CategorySchema,
 } from './infra/mongo/mongoose/schemas/categories.schema';
 import { CreateCategoryServices } from './services/categoriesServices/createCategory.service';
+import { ListCategoryService } from './services/categoriesServices/ListCategoryService';
 
 @Module({
     imports: [
@@ -25,6 +26,11 @@ import { CreateCategoryServices } from './services/categoriesServices/createCate
         {
             useClass: CreateCategoryServices,
             provide: 'CreateCategoriesService',
+        },
+
+        {
+            useClass: ListCategoryService,
+            provide: 'ListCategoryService',
         },
     ],
 })

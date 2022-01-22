@@ -1,7 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { ICreatePostDTO } from 'src/modules/post/dto/ICreatePost.dto';
+import {
+    ICreatePostDTO,
+    IUpdatePostDTO,
+} from 'src/modules/post/dto/ICreatePost.dto';
 import { IPostRepository } from 'src/modules/post/repositories/interfaces/IPostRepository';
 import { post, PostDocument } from '../schemas/post.schema';
 
@@ -33,10 +36,32 @@ export class PostRepository implements IPostRepository {
             .populate('author')
             .populate('category');
     }
-    findOneByTitle(title: any): Promise<PostDocument> {
-        throw new Error('Method not implemented.');
+    async findOneByTitle(title: any): Promise<PostDocument> {
+        return await this.PostModel.findOne({
+            title: { $regex: `${title}`, $options: '' },
+        });
     }
-    findOneById(_id: string): Promise<PostDocument> {
-        throw new Error('Method not implemented.');
+    async findOneById(_id: string): Promise<PostDocument> {
+        return await this.PostModel.findById({ _id });
+    }
+
+    async updatePost({
+        category_id,
+        description,
+        id,
+        title,
+    }: IUpdatePostDTO): Promise<PostDocument> {
+        const post = await this.PostModel.findOneAndUpdate(
+            { _id: id },
+            { category: category_id, description, title },
+            {
+                new: true,
+            },
+        );
+
+        return post;
+    }
+    async deletePost(id: string): Promise<void> {
+        await this.PostModel.findByIdAndRemove(id);
     }
 }

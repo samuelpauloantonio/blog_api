@@ -22,7 +22,7 @@ export class post {
         ref: 'categories',
         required: true,
     })
-    category: categories;
+    category: categories | any;
 
     @Prop()
     description: string;

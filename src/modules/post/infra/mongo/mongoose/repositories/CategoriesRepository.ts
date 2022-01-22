@@ -12,6 +12,10 @@ export class CategoryRepository implements ICategoriesRepository {
         private readonly CategoriesModel: Model<CategoriesDocument>,
     ) {}
 
+    async listAllCategory(): Promise<CategoriesDocument[]> {
+        return await this.CategoriesModel.find();
+    }
+
     async createCategory({
         name,
         description,

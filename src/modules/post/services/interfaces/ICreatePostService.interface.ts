@@ -1,5 +1,5 @@
 import { ICreatePostDTO } from '../../dto/ICreatePost.dto';
-import { PostDocument } from '../../infra/mongo/mongoose/schemas/post.schema';
+import { IPostResponseDTO } from '../../dto/IPostResponse.dto';
 
 export interface ICreatePostService {
     execute({
@@ -7,5 +7,5 @@ export interface ICreatePostService {
         author_id,
         category_id,
         description,
-    }: ICreatePostDTO): Promise<PostDocument>;
+    }: ICreatePostDTO): Promise<IPostResponseDTO>;
 }

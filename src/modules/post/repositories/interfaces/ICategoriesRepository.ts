@@ -8,4 +8,6 @@ export interface ICategoriesRepository {
     }: ICreateCategoryDTO): Promise<CategoriesDocument>;
 
     findOneByName(name: string): Promise<CategoriesDocument>;
+
+    listAllCategory(): Promise<CategoriesDocument[]>;
 }

@@ -21,5 +21,7 @@ import { AuthModule } from './accounts/auth/auth.module';
 export class AppModule {
     configure(consumer: MiddlewareConsumer) {
         consumer.apply(ensureAuthenticated).forRoutes('users/list-all');
+        consumer.apply(ensureAuthenticated).forRoutes('categories');
+        consumer.apply(ensureAuthenticated).forRoutes('post');
     }
 }

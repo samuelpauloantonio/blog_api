@@ -1,47 +1,40 @@
-/*
-https://docs.nestjs.com/providers#services
-*/
-
 import { Inject, Injectable, NotFoundException } from '@nestjs/common';
-import { IUserRepository } from 'src/modules/accounts/repositories/interfaces/IUserRepository';
-import { ICreatePostDTO } from '../../dto/ICreatePost.dto';
+import { IUpdatePostDTO } from '../../dto/ICreatePost.dto';
 import { IPostResponseDTO } from '../../dto/IPostResponse.dto';
 import { PostMap } from '../../mapper/PostMap';
 import { ICategoriesRepository } from '../../repositories/interfaces/ICategoriesRepository';
 import { IPostRepository } from '../../repositories/interfaces/IPostRepository';
 
 @Injectable()
-export class CreatePostService {
+export class UpdatePostService {
     constructor(
         @Inject('PostRepository')
         private readonly PostRepository: IPostRepository,
-        @Inject('UserRepository')
-        private readonly UserRepository: IUserRepository,
 
         @Inject('CategoriesRepository')
         private readonly CategoryRepository: ICategoriesRepository,
     ) {}
 
-    async execute({
+    async update({
         title,
-        author_id,
         category_id,
         description,
-    }: ICreatePostDTO): Promise<IPostResponseDTO> {
-        const author = await this.UserRepository.findOneById(author_id);
-        const categories = await this.CategoryRepository.listAllCategory();
+        id,
+    }: IUpdatePostDTO): Promise<IPostResponseDTO> {
+        const findPost = await this.PostRepository.findOneById(id);
 
-        if (!author) {
-            throw new NotFoundException('User not found');
+        if (!findPost) {
+            throw new NotFoundException('Post Not found');
         }
+        const categories = await this.CategoryRepository.listAllCategory();
 
         if (!categories.find((category) => category.id === category_id)) {
             throw new NotFoundException('Category not found');
         }
 
-        const post = await this.PostRepository.createPost({
+        const post = await this.PostRepository.updatePost({
             title,
-            author_id,
+            id,
             category_id,
             description,
         });

@@ -1,5 +1,5 @@
 import {
-    BadRequestException,
+    NotFoundException,
     Inject,
     NestMiddleware,
     UnauthorizedException,
@@ -33,7 +33,7 @@ export class ensureAuthenticated implements NestMiddleware {
 
             const user = await this.UserRepository.findOneById(user_id);
 
-            if (!user) throw new BadRequestException('User Does Not found');
+            if (!user) throw new NotFoundException('User Does Not found');
 
             request.user = {
                 id: user.id,

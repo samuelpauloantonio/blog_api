@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { RequestMethod } from '@nestjs/common';
+import { RequestMethod, ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import configuration from 'src/config/configuration';
@@ -17,6 +17,7 @@ async function bootstrap() {
         .setTitle('Saúde iD - Blog API')
         .setDescription('Saúde iD - Blog API with Node Js')
         .setVersion(version)
+        .addBearerAuth()
         .build();
 
     const document = SwaggerModule.createDocument(app, configSwagger);
@@ -27,7 +28,7 @@ async function bootstrap() {
             operationsSorter: 'alpha',
         },
     });
-
+    app.useGlobalPipes(new ValidationPipe());
     const port = configuration.port;
     await app.listen(port);
 
