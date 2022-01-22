@@ -106,6 +106,10 @@ yarn start:dev | npm run start:dev
 
 Para ajudar no processo precisaremos  acessar a ``Documentação da Aplicação``
 
+### É Possivel usar a documentação do Swagger para fazer requisões , authenticação e outras funcionalidades, excluindo a necessidade de usar  uma aplicação Client API como  o Insomnia ou Postman 
+
+<br/>
+
 No navegar  basta apenas colocar a seguinte URL
 ``http://localhost:4001/api``
 A documentação feita com Swagger e auto explicativa.
