@@ -2,7 +2,7 @@
 
 # <P style="text-align:center">Avaliação Técnica - backend</P>
 
-## Este é um desafio da  Saúde iD,  um empresa focada viabilizar interações que criam valor entre clientes e prestadores de serviços na área da saúde.
+## Este é um desafio da  Saúde iD,  um empresa focada em viabilizar interações que criam valor entre clientes e prestadores de serviços na área da saúde.
 
 <br/>
 <br/>
@@ -29,7 +29,7 @@ Criar uma API em Node Js para criação de um Blog,onde seja possível ```` Cria
 
 <br>
 
-## Desemvolvimento
+## ✋ Desemvolvimento
 -- Principais Tecnologias usadas :
 
 - NEST JS - `para criar o servidor`,
@@ -48,7 +48,7 @@ Criar uma API em Node Js para criação de um Blog,onde seja possível ```` Cria
 <br/>
 <br/>
 
-## CONFIGURAÇÕES INICIAS
+## 🔥 CONFIGURAÇÕES INICIAS
 -- Primero temos que instalar as dependências do projecto seja utilizando o gerenciador de patocos ````  Yarn OU NPM ```` e no directório do projecto no terminar vamos rodar :
 ```
   yarn  | npm install ==  preferêncial   yarn
@@ -59,7 +59,7 @@ Criar uma API em Node Js para criação de um Blog,onde seja possível ```` Cria
 
 ###  Aseguir devemos ter na nossa maquina instalado o banco de Dados o ```MongoDB``` .
 
-Para fazer a conexão basta no directório do projecto localizar o arquivo ```.env``` e modificalo com base as configurações do nosso banco de dados com a ``URL pode ser localhost ``caso seja local, a`` PORTA do banco de dados do MongoDB 27017``, o ``USERNAME``, a ``PASSWORD`` e o ``NOME DO DATABASE OU BANCO DE DADOS``..  exemplos do meu
+Para fazer a conexão basta no directório do projecto criar um arquivo ```.env``` e modificalo com base as configurações do nosso banco de dados com a ``URL pode ser localhost ``caso seja local, a`` PORTA do banco de dados do MongoDB 27017``, o ``USERNAME``, a ``PASSWORD`` e o ``NOME DO DATABASE OU BANCO DE DADOS``..  exemplos do meu
 
 ```
 MONGO_DATABASE_HOST=localhost
@@ -104,12 +104,14 @@ yarn start:dev | npm run start:dev
 
 ## COMO UTILIZAR API REST
 
-Para ajudar no processo precisaremos  Acessar a ``Documentação da Aplicação``
+Para ajudar no processo precisaremos  acessar a ``Documentação da Aplicação``
 
 No navegar  basta apenas colocar a seguinte URL
 ``http://localhost:4001/api``
 A documentação feita com Swagger e auto explicativa.
-
+<br/>
+<br/>
+![home page](https://github.com/samuelpauloantonio/blog_api/blob/main/public/assets/swagger.png?raw=true)
 ****
   <br/><br/>
   ### ``Os Melhores comprimentos com amor 😁❤️  Samuel Paulo António - samueldev1997@gmail.com``
