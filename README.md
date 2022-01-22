@@ -1,73 +1,116 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+# 🚀 Blog Api
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+# <P style="text-align:center">Avaliação Técnica - backend</P>
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Este é um desafio da  Saúde iD,  um empresa focada viabilizar interações que criam valor entre clientes e prestadores de serviços na área da saúde.
 
-## Description
+<br/>
+<br/>
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+O desáfio consiste em criar uma API REST para criação de um Blog,  com as funcionalidade principais de um CRUD, seguindo alguns princípios da programação como o SOLID.
 
-## Installation
 
-```bash
-$ npm install
+## Principas Funcionalidades
+
+Criar uma API em Node Js para criação de um Blog,onde seja possível ```` Criar, Listar, Editar e Visualizar um Post````.
+## Requisitos
+- A listagem dos posts
+- O detalhe de cada post:
+-- Informações de título, descrição, autor e categorias
+- Adicionar novos posts com as informações acima
+- Editar post
+- Excluir post
+
+ <br>
+
+## Plus
+- Documentação
+- Preocupação com o versionamento de código
+
+<br>
+
+## Desemvolvimento
+-- Principais Tecnologias usadas :
+
+- NEST JS - `para criar o servidor`,
+- NODE JS - `para trazer o javascript no backend`
+- TYPESCRIPT `para trazer o typagem no javascript`
+- MONGODB - `usando como o Banco de Dados`
+- MONGOOSE `para ajudar no mapeamento do banco `
+- CLASS-VALIDATOR - `para validar as rotas`
+- CLASS-TRANSFORMER - `para transfomar objectos em class`
+- GIT `para controlo de verção do projecto`
+- BCRYPTJS `para gerar hash da password do usuario`
+- DOT ENV `para carregar as variáveis ambiente`
+- JSON WEB TOKEN `para criar Json web Tokens  para authenticação na aplicação`
+ - SWAGGER DOCUMENTATION `para criar documentação da aplicação`
+----
+<br/>
+<br/>
+
+## CONFIGURAÇÕES INICIAS
+-- Primero temos que instalar as dependências do projecto seja utilizando o gerenciador de patocos ````  Yarn OU NPM ```` e no directório do projecto no terminar vamos rodar :
+```
+  yarn  | npm install ==  preferêncial   yarn
 ```
 
-## Running the app
+***
+<br/>
 
-```bash
-# development
-$ npm run start
+###  Aseguir devemos ter na nossa maquina instalado o banco de Dados o ```MongoDB``` .
 
-# watch mode
-$ npm run start:dev
+Para fazer a conexão basta no directório do projecto localizar o arquivo ```.env``` e modificalo com base as configurações do nosso banco de dados com a ``URL pode ser localhost ``caso seja local, a`` PORTA do banco de dados do MongoDB 27017``, o ``USERNAME``, a ``PASSWORD`` e o ``NOME DO DATABASE OU BANCO DE DADOS``..  exemplos do meu
 
-# production mode
-$ npm run start:prod
+```
+MONGO_DATABASE_HOST=localhost
+MONGO_DATABASE_PORT=27017
+MONGO_DATABASE_NAME=blog
 ```
 
-## Test
+Assim basta apenas modicar o arquivo com base as tuas configurações ``e criar um banco de Dados com o nome da DATABASE blog ``.
 
-```bash
-# unit tests
-$ npm run test
+#### Todos as variáveis  usada na app
+```
+PORT=
+ENVIROMENT=
 
-# e2e tests
-$ npm run test:e2e
+#Database environment
+MONGO_DATABASE_HOST=
+MONGO_DATABASE_PORT=
+MONGO_DATABASE_NAME=
 
-# test coverage
-$ npm run test:cov
+#JWT
+SECRET=
+
+
 ```
 
-## Support
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+<br/>
+<br/>
 
-## Stay in touch
+ ## RODAR O PROJECTO
+ <br/>
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+ -  ``Depois de instalar as dependências do projecto``
+ -  ```Instalar o Banco de Dados MongoDB```
+ -  ``e configurado o arquivo .env``
 
-## License
 
-Nest is [MIT licensed](LICENSE).
+ basta rodar o comando na raiz do projecto e terminal
+```
+yarn start:dev | npm run start:dev
+```
+
+## COMO UTILIZAR API REST
+
+Para ajudar no processo precisaremos  Acessar a ``Documentação da Aplicação``
+
+No navegar  basta apenas colocar a seguinte URL
+``http://localhost:4001/api``
+A documentação feita com Swagger e auto explicativa.
+
+****
+  <br/><br/>
+  ### ``Os Melhores comprimentos com amor 😁❤️  Samuel Paulo António - samueldev1997@gmail.com``
+  ---
